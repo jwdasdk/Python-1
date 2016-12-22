@@ -24,7 +24,6 @@ class Dictionary:
         # read the file
         with open(file_path, permission) as f:
             self.content = filter(len, f.read().split())
-            f.close()
 
         return self.content or []
 
@@ -78,7 +77,6 @@ class Dictionary:
                 f.write(str(key))
                 f.write(str(value))
                 f.write("\n")
-            f.close()
 
     def search_by_letter(self, letter):
         if self.dictionary.get(letter, 'empty') == "empty":
